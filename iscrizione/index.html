@@ -43,6 +43,8 @@
   document.getElementById("form-iscrizione").addEventListener("submit", function (e) {
     e.preventDefault();
     var piano = document.getElementById("piano").value;
+    var f = this.elements;
+    window.palestraIdentify(f.email.value.trim().toLowerCase(), { name: f.nome.value.trim(), azienda: f.azienda.value.trim() });
     window.palestraEvent("iscrizione_inviata", { piano: piano });
     this.style.display = "none";
     document.getElementById("grazie").style.display = "block";
