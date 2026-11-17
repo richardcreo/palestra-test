@@ -1,7 +1,7 @@
 // Palestra cat2: configurazione degli strumenti di misura.
 // Un campo vuoto = strumento spento. Si riempiono uno alla volta durante le prove.
 window.PALESTRA = {
-  posthogKey: "",                         // chiave progetto PostHog (org "RIc."), inizia con phc_
+  posthogKey: "phc_xkpRWTnafcXWDAs2XPcdXo2NHxQ7qsphSNBm3b26pwDS", // progetto Palestra, account richard.carcangiu.ai@gmail.com (EU)
   posthogHost: "https://eu.i.posthog.com",
   gaId: "",                               // ID Google Analytics 4, inizia con G-
   fathomSiteId: ""                        // ID sito Fathom (solo durante la prova gratuita)
