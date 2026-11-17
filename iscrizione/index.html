@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Iscriviti · Palestra Energia</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/analytics.js"></script>
+</head>
+<body>
+<div class="test-bar">Sito di prova per test di misurazione. Prodotto inventato, nessun servizio reale.</div>
+<header><div class="wrap">
+  <a class="logo" href="../">Palestra Energia</a>
+  <nav>
+    <a href="../" >Home</a>
+    <a href="../prezzi/" >Prezzi</a>
+    <a href="../iscrizione/" aria-current="page">Iscriviti</a>
+  </nav>
+</div></header>
+<main class="wrap">
+<section class="page-title"><h1>Iscriviti</h1><p>14 giorni gratis, senza carta.</p></section>
+<form id="form-iscrizione">
+  <label>Nome e cognome<input name="nome" required autocomplete="name"></label>
+  <label>Email di lavoro<input name="email" type="email" required autocomplete="email"></label>
+  <label>Azienda<input name="azienda" required autocomplete="organization"></label>
+  <label>Piano
+    <select name="piano" id="piano"><option value="base">Base</option><option value="pro">Pro</option><option value="pilota">Pilota</option></select>
+  </label>
+  <button class="btn" type="submit">Crea l'account</button>
+</form>
+<div class="thanks" id="grazie"><h2>Fatto.</h2><p>Questo è un sito di prova: nessun account è stato creato e i dati non sono stati salvati.</p></div>
+</main>
+<footer><div class="wrap">Palestra Energia è un nome inventato, usato solo per provare strumenti di analisi. Nessun dato inviato viene conservato.</div></footer>
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookie">
+  <p>Usiamo cookie di analisi per capire come viene usato il sito.</p>
+  <span class="actions"><button class="btn ghost" id="cookie-no">Rifiuta</button><button class="btn" id="cookie-ok">Accetta</button></span>
+</div>
+<script>
+(function () {
+  var p = new URLSearchParams(location.search).get("piano");
+  if (p) document.getElementById("piano").value = p;
+  document.getElementById("form-iscrizione").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var piano = document.getElementById("piano").value;
+    window.palestraEvent("iscrizione_inviata", { piano: piano });
+    this.style.display = "none";
+    document.getElementById("grazie").style.display = "block";
+  });
+})();
+</script>
+</body>
+</html>
